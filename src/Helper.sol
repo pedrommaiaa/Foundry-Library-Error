@@ -10,10 +10,6 @@ contract Helper {
     constructor(ERC20 _token) { token = _token; }
 
     function doSafeTransfer(address to, uint256 amount) external {
-        _doSafeTransfer(to, amount);
-    }
-
-    function _doSafeTransfer(address to, uint256 amount) internal {
         SafeTransferLib.safeTransfer(token, to, amount); 
     }
 }
